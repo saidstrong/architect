@@ -1,5 +1,9 @@
 import Link from "next/link";
-import { ARCHITECT_RUNNER_VERSION } from "@architect-runner/shared";
+import {
+  ARCHITECT_RUNNER_VERSION,
+  MACHINE_STATUSES,
+  TASK_STATUSES
+} from "@architect-runner/shared";
 
 export default function DashboardPage() {
   return (
@@ -28,6 +32,20 @@ export default function DashboardPage() {
             </span>
             .
           </p>
+          <div className="mt-4 grid gap-3 text-sm md:grid-cols-2">
+            <div>
+              <p className="text-slate-500">Machine statuses</p>
+              <p className="mt-1 font-mono text-slate-200">
+                {MACHINE_STATUSES.join(", ")}
+              </p>
+            </div>
+            <div>
+              <p className="text-slate-500">Task statuses</p>
+              <p className="mt-1 font-mono text-slate-200">
+                {TASK_STATUSES.join(", ")}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </main>

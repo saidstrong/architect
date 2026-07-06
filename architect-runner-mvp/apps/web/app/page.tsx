@@ -1,7 +1,8 @@
 import Link from "next/link";
 import {
   ARCHITECT_RUNNER_VERSION,
-  MACHINE_STATUSES
+  MACHINE_STATUSES,
+  TASK_STATUSES
 } from "@architect-runner/shared";
 import { getAppConfig } from "../lib/env";
 
@@ -43,6 +44,9 @@ export default function HomePage() {
             <h2 className="text-base font-semibold text-white">Shared package</h2>
             <p className="mt-3 text-sm leading-6 text-slate-300">
               Machine statuses: {MACHINE_STATUSES.join(", ")}.
+            </p>
+            <p className="mt-2 text-sm leading-6 text-slate-300">
+              Task statuses: {TASK_STATUSES.join(", ")}.
             </p>
           </div>
         </section>

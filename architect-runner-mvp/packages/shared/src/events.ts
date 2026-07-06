@@ -1,0 +1,33 @@
+export const EVENT_TYPES = [
+  "MACHINE_CREATED",
+  "MACHINE_PAIRING_TOKEN_CREATED",
+  "MACHINE_CONNECTED",
+  "MACHINE_HEARTBEAT",
+  "MACHINE_OFFLINE_DETECTED",
+  "PROJECT_CREATED",
+  "PROJECT_VERIFIED",
+  "PROJECT_INVALID_PATH",
+  "TASK_CREATED",
+  "TASK_BLOCKED_FOR_RISK",
+  "TASK_CLAIMED",
+  "RUN_CREATED",
+  "RUN_STARTED",
+  "RUN_LOG_RECEIVED",
+  "RUN_PAUSE_REQUESTED",
+  "RUN_PAUSED",
+  "RUN_RESUME_REQUESTED",
+  "RUN_RESUMED",
+  "RUN_STOP_REQUESTED",
+  "RUN_STOPPED",
+  "RUN_COMPLETED",
+  "RUN_FAILED",
+  "RUN_INTERRUPTED",
+  "REPORT_CREATED",
+  "COMMAND_BLOCKED"
+] as const;
+
+export type EventType = (typeof EVENT_TYPES)[number];
+
+export function isEventType(value: string): value is EventType {
+  return (EVENT_TYPES as readonly string[]).includes(value);
+}
