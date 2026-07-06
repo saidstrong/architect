@@ -1,0 +1,21 @@
+{
+  "name": "@architect-runner/runner",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "architect-runner": "./dist/index.js"
+  },
+  "scripts": {
+    "dev": "npm run build -w @architect-runner/shared && tsx src/index.ts",
+    "build": "npm run build -w @architect-runner/shared && tsc -p tsconfig.json",
+    "lint": "npm run typecheck",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@architect-runner/shared": "file:../../packages/shared"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2"
+  }
+}
