@@ -172,6 +172,7 @@ Rules:
 
 ```text
 Machine token must be stored locally.
+Only a hash of the machine token may be stored in the database.
 Machine token must never be committed to git.
 Machine token must never be printed in logs.
 Machine token must never be sent to run_logs.

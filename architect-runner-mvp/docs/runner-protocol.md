@@ -199,6 +199,10 @@ The runner should authenticate as:
 machine_id + machine_token
 ```
 
+The backend stores only `machine_token_hash`.
+
+Plain machine tokens should never be stored in the database or printed in logs.
+
 This gives cleaner separation:
 
 ```text

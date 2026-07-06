@@ -28,6 +28,10 @@ export interface ArchitectMachine {
   name: string;
   status: MachineStatus;
   runnerVersion?: string | null;
+  machineTokenHash?: string | null;
+  tokenLastRotatedAt?: string | null;
+  pairedAt?: string | null;
+  revokedAt?: string | null;
   lastHeartbeatAt?: string | null;
   lastSeenAt?: string | null;
   currentRunId?: string | null;

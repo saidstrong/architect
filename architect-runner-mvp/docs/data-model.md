@@ -295,6 +295,10 @@ user_id
 name
 status
 runner_version
+machine_token_hash
+token_last_rotated_at
+paired_at
+revoked_at
 last_heartbeat_at
 last_seen_at
 current_run_id
@@ -307,6 +311,8 @@ updated_at
 
 * `last_heartbeat_at` determines whether the machine is online.
 * `current_run_id` helps the dashboard quickly show what the laptop is doing.
+* `machine_token_hash` stores only a hash of the runner token for future machine authentication.
+* `paired_at`, `revoked_at`, and `token_last_rotated_at` support future credential lifecycle tracking.
 * Machine should be considered offline if heartbeat is stale.
 
 ### Example
@@ -675,6 +681,10 @@ create table public.machines (
   name text not null,
   status text not null default 'offline',
   runner_version text,
+  machine_token_hash text,
+  token_last_rotated_at timestamptz,
+  paired_at timestamptz,
+  revoked_at timestamptz,
   last_heartbeat_at timestamptz,
   last_seen_at timestamptz,
   current_run_id uuid,
